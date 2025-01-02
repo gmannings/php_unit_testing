@@ -34,3 +34,32 @@ Explain:
 * Why JUnit coverage report is needed and useful
 * What does 100% coverage mean?
 * How to fake coverage, and why that's a bad thing...
+
+## Stage 2
+
+A `MessageProcessor` class that introduces Dependency Injection, allowing it to depend
+on a separate service (`LoggerService`). 
+The `LoggerService` is injected into the `MessageProcessor`, enabling easier 
+testing and mocking.
+
+Use *PHPUnit and Prophecy* to test the `MessageProcessor` class, 
+ensuring a 100% coverage report.
+
+Happy Paths:
+
+* Ensure valid messages are processed correctly (e.g., converted to uppercase).
+* Verify the logger is called with the correct message.
+
+Edge Cases:
+
+* Test for empty messages, ensuring appropriate logging and exception handling.
+
+Interaction Testing:
+
+* Validate the interactions between MessageProcessor and the injected LoggerService.
+
+Exceptions:
+
+* Confirm that processing an empty message throws an InvalidArgumentException.
+
+How might the object be improved? How might testing assist with this?
